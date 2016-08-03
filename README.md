@@ -1,6 +1,6 @@
 # Infinit Storage Platform in Docker
 
-[![](https://imagelayers.io/badge/geodata/infinit:latest.svg)](https://imagelayers.io/?images=geodata/infinit:latest)
+[![](https://imagelayers.io/badge/geodata/infinit:0.6.1.svg)](https://imagelayers.io/?images=geodata/infinit:0.6.1)
 
 This is an Ubuntu derived image providing executables for the
 [Infinit Storage Platform](https://infinit.sh/).  The executables are installed

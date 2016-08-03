@@ -25,7 +25,7 @@ add-apt-repository "deb https://debian.infinit.sh/ trusty main"
 
 # Install infinit.
 apt-get update -y
-apt-get install -y infinit
+apt-get install -y infinit=0.6.1
 
 # Remove the build dependencies.
 apt-get remove -y $build_dependencies
