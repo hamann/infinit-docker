@@ -9,8 +9,7 @@ trap 'exit' ERR
 set -E
 
 # The APT dependencies for building the image.
-build_dependencies="software-properties-common
-  apt-transport-https"
+build_dependencies="software-properties-common apt-transport-https"
 
 # Install the build dependencies.
 apt-get update -y

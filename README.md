@@ -1,15 +1,13 @@
 # Infinit Storage Platform in Docker
 
-[![](https://imagelayers.io/badge/geodata/infinit:latest.svg)](https://imagelayers.io/?images=geodata/infinit:latest)
 
-This is an Ubuntu derived image providing executables for the
-[Infinit Storage Platform](https://infinit.sh/).  The executables are installed
-from the official Infinit apt repository.
+This is an Ubuntu-derived image providing executables for the [Infinit Storage Platform](https://infinit.sh/).
 
-Each branch in the git repository corresponds to a supported Infinit version
-(e.g. `0.6.1`) with the master branch following the latest release. These branch
-names are reflected in the image tags on the Docker Hub.
+The executables are installed from the official Infinit apt repository.
 
+Apart from that
+
+This image was originally forked from https://github.com/geo-data/infinit-docker.
 ## Usage
 
 Run the image along these lines:
