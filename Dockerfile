@@ -1,32 +1,21 @@
-##
-# geodata/infinit
-#
-# Executables for the Infinit Storage Platform <https://infinit.sh/>.
-#
-
 FROM ubuntu:14.04.5
 
 MAINTAINER Joshua Sierles <joshua@nextjournal.com>
 
-# Install the application.
-ADD . /tmp/build/
-RUN /tmp/build/build.sh
+RUN apt-get update -y && apt-get install -y software-properties-common apt-transport-https fuse
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3D2C3B0B && \
+    add-apt-repository "deb https://debian.infinit.sh/ trusty main"
+RUN apt-get update -y && apt-get install -y infinit
 
-#! /bin/sh
+RUN apt-get remove -y software-properties-common apt-transport-https && \
+    apt-get autoremove -y && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+ADD . /build
+
+ENV PATH "/opt/infinit/bin:${PATH}"
 ENV INFINIT_HOME /infinit
-ENV PORT 10400
+VOLUME /infinit
 
-ENV USER nextjournal
-ENV NETWORK nextjournal
-ENV VOLUME nextjournal
-
-# Expose a port for use with mounting a docker-volume
-
-EXPOSE $PORT
-
-# Add the infinit executables to the PATH.
-ENV PATH="/opt/infinit/bin:${PATH}"
-
-# The default command is to mount a volume specified in the VOLUME env variable
-CMD ["sh", "entrypoint.sh"]
+CMD ["sh", "/build/run.sh"]
