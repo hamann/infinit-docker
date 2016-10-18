@@ -19,8 +19,7 @@ apt-get install -y $build_dependencies
 apt-get install -y fuse
 
 # Add the infinit APT repository.
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3D2C3B0B
-add-apt-repository "deb https://debian.infinit.sh/ trusty main"
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3D2C3B0B && add-apt-repository "deb https://debian.infinit.sh/ trusty main"
 
 # Install infinit.
 apt-get update -y
