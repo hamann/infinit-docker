@@ -16,6 +16,11 @@ ADD . /build
 
 ENV PATH "/opt/infinit/bin:${PATH}"
 ENV INFINIT_HOME /infinit
+
+# Disable optimisation which seems to cause trouble when replication nodes fail
+
+ENV DISABLE_KEY_HASH 1
+
 VOLUME /infinit
 
 CMD ["sh", "/build/run.sh"]
