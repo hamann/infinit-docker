@@ -1,4 +1,4 @@
-infinit-user --import -i /etc/infinit/user.json
+infinit-user --import -i $USER_JSON
 infinit-network --fetch --as $USER
 infinit-volume --fetch --as $USER
 
